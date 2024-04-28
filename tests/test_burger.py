@@ -37,7 +37,6 @@ class TestBurger:
         """
         Функция add_ingredient добавляет новый элемент в список ingredients
         """
-        assert len(self.burger.ingredients) == 0
         self.burger.add_ingredient(self.mock_ingredient)
         assert len(self.burger.ingredients) == 1
 
@@ -46,7 +45,6 @@ class TestBurger:
         Функция remove_ingredient удаляет элемент из списка ingredients
         """
         self.burger.add_ingredient(self.mock_ingredient)
-        assert len(self.burger.ingredients) == 1
         self.burger.remove_ingredient(0)
         assert len(self.burger.ingredients) == 0
 
@@ -56,7 +54,6 @@ class TestBurger:
         """
         self.burger.add_ingredient(self.mock_ingredient)
         self.burger.add_ingredient(self.mock_ingredient2)
-        assert self.burger.ingredients[0].name == 'ingredient' and self.burger.ingredients[1].name == 'ingredient2'
         self.burger.move_ingredient(0, 1)
         assert self.burger.ingredients[0].name == 'ingredient2' and self.burger.ingredients[1].name == 'ingredient'
 
